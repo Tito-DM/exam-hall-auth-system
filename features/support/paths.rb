@@ -12,16 +12,9 @@ module NavigationHelpers
 
     when /the home\s?page/
      '/'
-    when /edit recipe\s?page/
-       edit_user_recipe_path(1,1)
-    when /the create new recip page/
-     new_user_recipe_path(User.ids)
+    when /register student page/
+         new_student_path
     when /the create new user page/
-      new_user_path
-    when /the details page for 'Calulu'/
-      recipe_path(Recipe.where(name: 'calulu').ids)
-    when /comment page/
-      new_recipe_comment_path(Recipe.where(name: 'calulu').ids)
 
 
 

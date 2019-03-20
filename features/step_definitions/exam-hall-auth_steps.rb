@@ -38,19 +38,14 @@ Given("I  click {string}") do |link|
 end
 
 When /^I press on (.*)$/ do |button|
-  find('input[value= "Sign Up"]').click  if button == "Sign Up"
-  find('input[value= "Create Recipe"]').click if button == "create recipe"
-  find('input[value= "Add Ingredient"]').click if button == 'Add Ingredient'
-  find('input[value= "Add step"]').click if button == 'Add step'
-
-
+   find('input[value= "Create Student"]').click if button = "Create Student"
 
   # if button = 'comment'
   # find('input[id= "comment"]').click
   # end
 
-  # if button = 'add comment'
-  #   find('input[value= "add comment"]').click
+  # if button == 'Create Student'
+  #   find('input[value= "Create Student"]').click
   # end
 
 
