@@ -5,5 +5,5 @@ class Subject < ApplicationRecord
   validates :final_Mark, presence: true
   validates :exame_date, presence:true
   validates :exam_value, presence: true
-  validates :student_id, presence :true
+  validates :student_id, presence:true
 end
