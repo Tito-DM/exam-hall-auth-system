@@ -1,6 +1,8 @@
 class Student < ApplicationRecord
   has_many :subject, foreign_key: "student_id", dependent: :destroy
-  validates :name, presence: true
-  validates :surname, presence: true
+  validates :name, presence: true, length:  { minimum: 3,  maximum: 50}
+  validates :surname, presence: true, length: {minimum:3, maximum:50}
   validates :gender,presence: true
+  validates :student_number, presence: true
+  validates :id_number, presence: true
 end
