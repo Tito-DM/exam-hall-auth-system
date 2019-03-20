@@ -38,7 +38,8 @@ Given("I  click {string}") do |link|
 end
 
 When /^I press on (.*)$/ do |button|
-   find('input[value= "Create Student"]').click if button = "Create Student"
+  #  find('input[value= "Create Student"]').click if button = "Create Student"
+   find('input[value= "Create Subject"]').click if button = "Create Subject"
 
   # if button = 'comment'
   # find('input[id= "comment"]').click
@@ -71,15 +72,16 @@ Then("It should redirect me to {string}") do |comment_page|
    visit path_to(comment_page)
 end
 
-Given("the following user exists:") do |table|
-  table.hashes.each do |user|
-    FactoryBot.create(:user, user)
+Given("the following Student exists:") do |table|
+  table.hashes.each do |studnet|
+    Student.create!(studnet)
+
   end
 end
 
 When("I visit the {string} show page") do |text|
-    user = User.find_by_email(text)
-    visit user_path(user)
+    student = Student.find_by_id_number(text)
+    visit   student_path(student)
 end
 
 Given("I visit the {string} recipe {string} show page") do |string, string2|

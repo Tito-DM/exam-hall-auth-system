@@ -15,7 +15,7 @@ Feature: Register a Student
       And I fill in 'student[student_number]' with ''
       And I fill in 'student[id_number]' with ''
       Then I press on 'Create Student'
-      Then  show me the page
+      #Then  show me the page
       Then  I should see "Name can't be blank"
 
 
@@ -27,6 +27,6 @@ Feature: Register a Student
       And I fill in 'student[student_number]' with '215025160'
       And I fill in 'student[id_number]' with 'N11919490'
       Then I press on 'Create Student'
-      Then  show me the page
+      #Then  show me the page
       Then  I should see "Student was successfully created."
       Then  the number of "student" on the database should be 1
