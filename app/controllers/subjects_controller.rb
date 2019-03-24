@@ -1,6 +1,8 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
-  before_action :set_student, only: [:new,:create,:edit, :update, :destroy]
+  before_action :set_student, only: [:new,:create,:edit, :update, :destroy,:show]
+  # before_action :require_user, except: [:index,:view]
+  # before_action :require_same_student, only: [:edit,:update,:show,:destroy]
 
   # GET /subjects
   # GET /subjects.json
@@ -11,11 +13,11 @@ class SubjectsController < ApplicationController
   # GET /subjects/1
   # GET /subjects/1.json
   def show
+    @subject = @student.subject.find(params[:id])
   end
 
   # GET /subjects/new
   def new
-
     @subject = @student.subject.build
   end
 
@@ -29,7 +31,7 @@ class SubjectsController < ApplicationController
     @subject = @student.subject.create(subject_params)
     respond_to do |format|
       if @subject.save
-        format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
+        format.html { redirect_to  student_subject_path(@student, @subject), notice: 'Subject was successfully created.' }
         format.json { render :show, status: :created, location: @subject }
       else
         format.html { render :new }
@@ -73,6 +75,14 @@ class SubjectsController < ApplicationController
     def set_student
       @student = Student.find(params[:student_id])
     end
+
+    # def require_student
+    # @subject = @student.subject.find(params[:id])
+    # if current_user != @subject.student
+    #   flash[:denger] = 'you can only edit or delete your recipe'
+    #   redirect_to root_path
+    # end
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subject_params
