@@ -26,4 +26,5 @@
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<%= link_to 'Back', students_path %> |
+<%= link_to 'add subject',  new_student_subject_path(@student.id)%>

@@ -5,8 +5,8 @@ Feature: Add student subject
 
   Background: Ensure existence of a studnet
     Given the following Student exists:
-      | name | surname   | gender | student_number    | id_number|
-      | Marc | angola    | male   | 03421342          | 90085    |
+    | id | name | surname   | gender | student_number    | id_number|
+    | 2 | Marc | angola    | male   | 03421342          | 90085    |
     And I visit the '90085' show page
 
 
@@ -20,7 +20,7 @@ Feature: Add student subject
     And I fill in 'subject[student_id]' with ''
     Then I press on 'Create Suject'
     Then  show me the page
-    Then  I should see "Student must exist"
+    Then  I should see "Name can't be blank"
 
 
   # Scenario:  register a student

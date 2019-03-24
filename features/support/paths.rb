@@ -15,7 +15,7 @@ module NavigationHelpers
     when /register student page/
       new_student_path
     when /add student subject page/
-      new_subject_path
+      new_student_subject_path(2)
 
 
 
