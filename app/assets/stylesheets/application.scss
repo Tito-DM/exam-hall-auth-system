@@ -2,3 +2,59 @@
 // $primary-color: color("blue", "lighten-2") !default;
 // $secondary-color: color("yellow", "base") !default;
 // @import "materialize"
+@import "bootstrap";
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #0d47a1;
+  color: whitesmoke;
+}
+
+.home-text_header{
+  letter-spacing:5px;
+  font-weight: 400;
+  text-transform:capitalize;
+
+}
+
+.double-border {
+  background-color: inherit;
+  border: 1px solid #fff;
+  padding: 2em;
+  width: inherit;
+  height: 95vh;
+  position: relative;
+  margin: 20px;
+
+  &:before {
+  background: none;
+  border: 1px solid #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  pointer-events: none;
+}
+
+}
+
+.home{
+  position:relative;
+  &_login{
+  width: 45%;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+}
+
