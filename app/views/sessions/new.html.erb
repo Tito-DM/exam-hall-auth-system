@@ -1,0 +1,17 @@
+
+<h1 class="mute text-center ">exam hall authentication system</h1>
+<div class="container home">
+  <div class="home_login">
+    <%= form_for(:session, url:login_path) do |f| %>
+      <div class="form-group">
+        <%= f.label :Username, for: "username"%>
+        <%= f.text_field :username, class: "form-control" ,id:"username",  placeholder:"Enter username",autofocus: true%>
+      </div>
+      <div class="form-group">
+        <%= f.label :Password, for: "password"%>
+        <%= f.password_field :password, class: "form-control" ,id:"password",  placeholder:"Enter password", autofocus: true%>
+      </div>
+      <%= f.submit 'Login', class:"btn btn-success "%>
+    <%end%>
+  </div>
+</div>
