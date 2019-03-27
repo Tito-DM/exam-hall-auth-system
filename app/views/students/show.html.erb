@@ -1,30 +1,63 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
+<h1 class="student_h1-text text-center"> Student profile</h1>
 
-<p>
-  <strong>Surname:</strong>
-  <%= @student.surname %>
-</p>
+<div class="container">
+   <div class="row">
+    <div class="col">
+      <p class="student_p">
+        <strong class="muted small">Name:</strong>
+        <span  class="muted small"><%= @student.name %></span>
+      </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @student.gender %>
-</p>
+      <p class="student_p">
+        <strong  class="muted small">Surname:</strong>
+        <span  class="muted small"><%= @student.surname %></span>
+      </p>
 
-<p>
-  <strong>Student number:</strong>
-  <%= @student.student_number %>
-</p>
+      <p class="student_p">
+        <strong  class="muted small">Gender:</strong>
+        <span  class="muted small"><%= @student.gender %></span>
+      </p>
 
-<p>
-  <strong>Id number:</strong>
-  <%= @student.id_number %>
-</p>
+      <p class="student_p">
+        <strong  class="muted small">Student number:</strong>
+        <span  class="muted small"><%= @student.student_number %></span>
+      </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %> |
-<%= link_to 'add subject',  new_student_subject_path(@student.id)%>
+      <p class="student_p">
+        <strong  class="muted small">Id number:</strong>
+        <span  class="muted small"><%= @student.id_number %></span>
+      </p>
+
+    </div>
+    <div class="col">
+      <%= image_tag '20170712_134147', class:'student_profile-img' %>
+    </div>
+  </div>
+
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Subject Code</th>
+      <th>Final Mark</th>
+      <th>exam Date</th>
+      <th>exam Venue</th>
+
+    </tr>
+    <%@student.subject.each do |subject| -%>
+
+      <tr class= <%=exam_checkup(subject)%>>
+          <td><%= subject.name%></td>
+          <td><%= subject.code%></td>
+          <td><%= subject.final_Mark%></td>
+          <td><%= subject.exame_date%></td>
+          <td><%= subject.exam_value%></td>
+      </tr>
+    <%end-%>
+  </table>
+
+  <%= link_to 'Edit', edit_student_path(@student) %> |
+  <%= link_to 'Back', students_path %> |
+  <%= link_to 'add subject',  new_student_subject_path(@student.id)%>
+</div>
