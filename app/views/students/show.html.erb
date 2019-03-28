@@ -41,19 +41,20 @@
       <th>Name</th>
       <th>Subject Code</th>
       <th>Final Mark</th>
-      <th>exam Date</th>
-      <th>exam Venue</th>
+       <th>Exam Date & TIme</th>
+      <th>Exam Venue</th>
 
     </tr>
     <%@student.subject.each do |subject| -%>
-
-      <tr class= <%=exam_checkup(subject)%>>
-          <td><%= subject.name%></td>
-          <td><%= subject.code%></td>
-          <td><%= subject.final_Mark%></td>
-          <td><%= subject.exame_date%></td>
-          <td><%= subject.exam_value%></td>
-      </tr>
+      <% if subject.final_Mark >= 40 %>
+        <tr class= <%=exam_checkup(subject)%>>
+            <td><%= subject.name%></td>
+            <td><%= subject.code%></td>
+            <td><%= subject.final_Mark%></td>
+             <td><%= subject.exam_datetime%></td>
+            <td><%= subject.exam_venue%></td>
+        </tr>
+      <%end%>
     <%end-%>
   </table>
 
