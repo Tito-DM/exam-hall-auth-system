@@ -11,39 +11,40 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name ,class: "form-control " %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :code %>
-    <%= form.text_field :code %>
+    <%= form.text_field :code ,class: "form-control "%>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :final_Mark %>
-    <%= form.number_field :final_Mark %>
+    <%= form.number_field :final_Mark ,class: "form-control "%>
   </div>
 
 
 
-    <div class="field">
+    <div class="form-group">
     <%= form.label :exam_datetime %>
-    <%= form.datetime_select :exam_datetime%>
+    <%= form.datetime_select :exam_datetime ,class: "form-control-datetime "%>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :exam_venue %>
-    <%= form.text_field :exam_venue %>
+    <%= form.text_field :exam_venue,class: "form-control "%>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :student_id %>
-    <%= form.text_field :student_id %>
+    <%= form.text_field :student_id ,class: "form-control "%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-success " %>
   </div>
 <% end %>

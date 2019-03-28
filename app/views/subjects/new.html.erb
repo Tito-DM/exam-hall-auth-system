@@ -1,5 +1,7 @@
-<h1>New Subject</h1>
+<h1 class="text-center">New Subject</h1>
+<div class='container'>
 
-<%= render 'form', subject: @subject %>
+  <%= render 'form', subject: @subject %>
 
-<%= link_to 'Back', student_subjects_path(@student) %>
+  <%= link_to 'Back', student_subjects_path(@student) %>
+</div>

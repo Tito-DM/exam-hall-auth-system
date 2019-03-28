@@ -25,15 +25,21 @@
         <span  class="muted small"><%= @student.student_number %></span>
       </p>
 
+
+      <p class="student_p">
+        <strong  class="muted small">course:</strong>
+        <span  class="muted small"><%= @student.course %></span>
+      </p>
       <p class="student_p">
         <strong  class="muted small">Id number:</strong>
         <span  class="muted small"><%= @student.id_number %></span>
       </p>
 
+
+
     </div>
     <div class="col">
       <%= image_tag @student.image, class:'student_profile-img' %>
-    </div>
   </div>
 
   <table class="table">
