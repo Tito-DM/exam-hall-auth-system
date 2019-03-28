@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
   has_many :subject, dependent: :destroy
-  has_one_attached :avatar
+  has_one_attached :image
   validates :name, presence: true, length:  { minimum: 3,  maximum: 50}
   validates :surname, presence: true, length: {minimum:3, maximum:50}
   validates :gender,presence: true
