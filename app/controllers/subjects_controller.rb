@@ -31,7 +31,7 @@ class SubjectsController < ApplicationController
     @subject = @student.subject.create(subject_params)
     respond_to do |format|
       if @subject.save
-        format.html { redirect_to  student_subject_path(@student, @subject), notice: 'Subject was successfully created.' }
+        format.html { redirect_to  student_path(@student), notice: 'Subject was successfully created.' }
         format.json { render :show, status: :created, location: @subject }
       else
         format.html { render :new }
