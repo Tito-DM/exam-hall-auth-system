@@ -9,6 +9,99 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+
+
+  &.restart {
+    svg {
+
+      path,
+      circle,
+      .drop {
+        animation: none !important
+      }
+    }
+  }
+}
+
+button {
+  font-size: 16px;
+}
+
+svg {
+  max-width: 50%;
+  max-height: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  &.restart {
+
+    path,
+    circle,
+    .drop {
+      animation: none !important
+    }
+  }
+
+  path {
+    fill-opacity: 0;
+    stroke: #fff;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-dasharray: 100px;
+    stroke-dashoffset: 100px;
+    animation-name: drawIt;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+  }
+
+  circle {
+    fill-opacity: 0;
+    stroke: #fff;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-dasharray: 100px;
+    stroke-dashoffset: 100px;
+    animation-name: drawIt;
+    animation-duration: 1s;
+    animation-delay: .25s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+  }
+
+  .drop {
+    fill: white;
+    opacity: 0;
+    stroke-width: 0;
+    fill-opacity: 1;
+    animation-name: fadeIn;
+    animation-delay: .75s;
+    animation-duration: .35s;
+  }
+}
+
+@keyframes drawIt {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 .student_p{
   font-size: x-large;
 }
@@ -103,10 +196,10 @@ h1{
 
   .center_element-btn {
     position: absolute;
-    top: 70%;
+    bottom: -45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-bottom: 2rem;
+    margin-bottom: 10rem;
   }
 }
 

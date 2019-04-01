@@ -20,3 +20,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+
+$('.b').on('click', function (e) {
+  $('body').addClass('restart');
+  window.setTimeout(function (e) {
+    $('body').removeClass('restart')
+  }, 50)
+});
