@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   root 'home#verification'
-  get 'login' => 'sessions#new'
-  post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
+  # get 'login' => 'sessions#new'
+  # post 'login' => 'sessions#create'
+  # delete 'logout' => 'sessions#destroy'
 
   # namespace  :api do
   #   resources :pings, only: :index,
