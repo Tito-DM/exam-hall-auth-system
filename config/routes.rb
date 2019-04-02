@@ -1,20 +1,20 @@
 Rails.application.routes.draw do
 
-  root 'home#verification'
-  # get 'login' => 'sessions#new'
-  # post 'login' => 'sessions#create'
-  # delete 'logout' => 'sessions#destroy'
-
   # namespace  :api do
   #   resources :pings, only: :index,
   #   constrains: { format: 'jason'}
   #   resources :student, only: [:index,:update, :show]
   # end
 
-  resources :users
-  resources :students do
-    resources :subjects
-  end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # resources :users
+  # resources :students do
+  #   resources :subjects
+  # end
+  # # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  # root 'sessions#new'
+  # get 'home/verification'
+  # get 'login', to: 'sessions#new'
+  # post 'login', to: 'sessions#create'
+  # delete 'logout', to: 'sessions#destroy'
 end
