@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  namespace  :api do
-    resources :pings, only: :index,
-    constrains: { format: 'jason'}
-    resources :student, only: [:index,:update, :show]
-  end
+  # namespace  :api do
+  #   resources :pings, only: :index,
+  #   constrains: { format: 'jason'}
+  #   resources :student, only: [:index,:update, :show]
+  # end
 
   resources :users
   resources :students do
