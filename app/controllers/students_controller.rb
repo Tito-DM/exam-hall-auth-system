@@ -28,6 +28,7 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
+        session[:student_id] = student.id
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
       else
