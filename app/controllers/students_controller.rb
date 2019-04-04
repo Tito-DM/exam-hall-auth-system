@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+     session[:student_id] = params[:id]
   end
 
   # GET /students/new
@@ -25,10 +26,10 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(student_params)
-
+    session[:student_id] = @student.id
     respond_to do |format|
       if @student.save
-        session[:student_id] = student.id
+
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
       else

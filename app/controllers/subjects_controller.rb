@@ -46,7 +46,7 @@ class SubjectsController < ApplicationController
     @subject = @student.subject.find(params[:id])
     respond_to do |format|
       if @subject.update(subject_params)
-        format.html { redirect_to @subject, notice: 'Subject was successfully updated.' }
+        format.html { redirect_to student_path(@student), notice: 'Subject was successfully updated.' }
         format.json { render :show, status: :ok, location: @subject }
       else
         format.html { render :edit }

@@ -20,6 +20,12 @@ Given("the following ingredients exist:") do |ingredient_table|
 end
 
 
+Then("I should see list of registred sudent:") do |table|
+  # table is a Cucumber::MultilineArgument::DataTable
+   #student = Student.all
+end
+
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
@@ -34,12 +40,12 @@ When("I fill in {string} with {string}") do |string, string2|
 end
 
 Given("I  click {string}") do |link|
-    click_link 'comment'
+    click_link  link
 end
 
 When /^I press on (.*)$/ do |button|
   #  find('input[value= "Create Student"]').click if button = "Create Student"
-   find('input[value= "Create Subject"]').click if button = "Create Subject"
+   find('input[value= "Create Student"]').click if button = "Create Student"
 
   # if button = 'comment'
   # find('input[id= "comment"]').click

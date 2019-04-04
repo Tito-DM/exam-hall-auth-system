@@ -14,6 +14,8 @@ Feature: Register a Student
       And I fill in 'student[gender]' with ''
       And I fill in 'student[student_number]' with ''
       And I fill in 'student[id_number]' with ''
+      And I fill in 'student[image]' with 'img.jpg'
+
       Then I press on 'Create Student'
       #Then  show me the page
       Then  I should see "Name can't be blank"

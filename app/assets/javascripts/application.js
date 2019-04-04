@@ -23,9 +23,9 @@
 
 
 
-$('.b').on('click', function (e) {
-  $('body').addClass('restart');
-  window.setTimeout(function (e) {
-    $('body').removeClass('restart')
-  }, 50)
-});
+// $('.b').on('click', function (e) {
+//   $('body').addClass('restart');
+//   window.setTimeout(function (e) {
+//     $('body').removeClass('restart')
+//   }, 50)
+// });
