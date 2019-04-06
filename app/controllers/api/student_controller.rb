@@ -1,7 +1,7 @@
 class Api::StudentController < ApplicationController
   def index
     student = current_student.id
-    render json: {student}'}, status: :ok
+    render json: {student}, status: :ok
   end
 
   def setting
@@ -13,7 +13,7 @@ class Api::StudentController < ApplicationController
     student = Student.find(params[:id])
     student.update_columns(fingerstatus: params[:fingerstatus])
     render json: student, status: :ok if student.save
-      
+
   end
 
   def show 
