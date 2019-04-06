@@ -5,7 +5,8 @@ class Api::StudentController < ApplicationController
   end
 
   def setting
-    render json: {'setting' => '#{settint_api}'}, status: :ok
+    @setting = settint_api
+    render json: {'setting' => '#{@setting}'}, status: :ok
 
   end
 
