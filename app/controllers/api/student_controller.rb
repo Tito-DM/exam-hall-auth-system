@@ -1,6 +1,6 @@
 class Api::StudentController < ApplicationController
   def index
-    @student = current_student
+    @student = Student.find(1)
     render json: {'student': @student}, status: :ok
   end
 
