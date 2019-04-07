@@ -1,7 +1,7 @@
 class Api::StudentController < ApplicationController
   def index
     @student = current_student
-    render json: {'student': "i9"}, status: :ok
+    render json: {'student': @student.id}, status: :ok
   end
 
   def setting
