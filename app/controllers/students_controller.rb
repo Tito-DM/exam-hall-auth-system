@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
-     $setting = ""
+    $setting = ""
   end
 
   # GET /students/1
@@ -29,10 +29,8 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
-
     @student = Student.new(student_params)
-
-     $setting = 'enroll'
+    $setting = 'enroll'
     respond_to do |format|
       if @student.save
         $student = @student.id
