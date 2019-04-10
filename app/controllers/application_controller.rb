@@ -7,11 +7,6 @@ class ApplicationController < ActionController::Base
   def settint_api
     @setting =  $setting
   end
-
-  def student_name
-     @current_student = Student.find(session[:student_id]) if session[:student_id]
-     @current_student.name
-  end
   def current_student
     @current_student =$student
   end
