@@ -1,12 +1,12 @@
 class Api::StudentController < ApplicationController
   def index
-    @student = Student.find(current_student.id)
-    render json: {'student': @student}, status: :ok
+    student = Student.find(current_student.id)
+    render json: student, status: :ok
   end
 
   def setting
-    @setting = settint_api
-    render json: {'setting' => @setting}, status: :ok
+    setting = settint_api
+    render json: setting, status: :ok
 
   end
 
