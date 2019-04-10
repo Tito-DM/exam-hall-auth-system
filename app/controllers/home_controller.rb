@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
 
   def index
-  session[:setting] = ""
+  $setting = ""
   end
 
   def verification
-    session[:setting] = ""
+    $setting = ""
   end
 end

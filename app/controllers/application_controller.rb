@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_student, :logged_in?, :user_name, :current_user,:settint_api
   #those methods are availeble to all controler
   def settint_api
-    @setting =  $sett
+    @setting =  $setting
   end
 
   def student_name
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
      @current_student.name
   end
   def current_student
-    @current_student ||= Student.find(session[:student_id]) && Student.find_by(id: session[:student_id])
+    @current_student =$student 
   end
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
