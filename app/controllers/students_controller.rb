@@ -29,6 +29,7 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
+
     @student = Student.new(student_params)
 
      $setting = 'enroll'
