@@ -5,25 +5,25 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
-    session[:setting] = ""
+     $sett = ""
   end
 
   # GET /students/1
   # GET /students/1.json
   def show
     session[:student_id] = params[:id]
-    session[:setting] = ""
+    $sett = ""
   end
 
   # GET /students/new
   def new
     @student = Student.new
-    session[:setting] = 'enroll'
+     $sett = 'enroll'
   end
 
   # GET /students/1/edit
   def edit
-    session[:setting] = 'enroll'
+     $sett = 'enroll'
   end
 
   # POST /students
@@ -31,7 +31,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
 
-    session[:setting] = 'enroll'
+     $sett = 'enroll'
     respond_to do |format|
       if @student.save
         session[:student_id] = @student.id
@@ -47,7 +47,7 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
-    session[:setting] = 'enroll'
+    $sett = 'enroll'
     respond_to do |format|
       if @student.update(student_params)
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
@@ -62,7 +62,7 @@ class StudentsController < ApplicationController
   # DELETE /students/1
   # DELETE /students/1.json
   def destroy
-    session[:setting] = ""
+     $sett = ""
     @student.destroy
     respond_to do |format|
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }

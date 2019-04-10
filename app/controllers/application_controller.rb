@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_student, :logged_in?, :user_name, :current_user,:settint_api
   #those methods are availeble to all controler
   def settint_api
-    @setting = session[:setting]
+    @setting =  $sett
   end
 
   def student_name
