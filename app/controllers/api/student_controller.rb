@@ -6,7 +6,7 @@ class Api::StudentController < ApplicationController
 
   def setting
     setting = settint_api
-    render json: setting, status: :ok
+    render json: setting.to_json, status: :ok
 
   end
 
