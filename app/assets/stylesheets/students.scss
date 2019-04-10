@@ -1,3 +1,38 @@
 // Place all the styles related to the Students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.student_p{
+  font-size: x-large;
+}
+
+.student_profile-img{
+  width: 340px;
+  height: 330px;
+  margin-bottom: 2rem;
+  border: 2px solid whitesmoke;
+
+}
+
+.student_h1-text{
+  margin-bottom: 2rem
+}
+
+body{
+  background-color: #0d47a1;
+  color: whitesmoke;
+}
+.not_qualified {
+  background-color: red;
+}
+.qualify{
+  background-color: green;
+}
+h1{
+  letter-spacing:5px;
+  font-weight: 400;
+  text-transform:capitalize;
+
+}
+
