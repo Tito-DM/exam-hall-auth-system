@@ -10,7 +10,8 @@ class Api::StudentController < ApplicationController
 
   end
 
-  def update
+  def create
+    byebug
     student = Student.find(params[:id])
     student.update_columns(fingerstatus: params[:fingerstatus])
     render json: student, status: :ok if student.save
