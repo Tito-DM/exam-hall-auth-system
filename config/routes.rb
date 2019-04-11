@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   namespace  :api do
     resources :pings, only: :index,
     constrains: { format: 'jason'}
-    resources :student, only: [:index,:edit, :show]
+    resources :student, only: [:index,:edit]
     get 'setting', to: 'student#setting'
+    post 'query', to: 'student#query'
 
   end
 

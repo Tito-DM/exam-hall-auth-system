@@ -16,7 +16,7 @@ class Api::StudentController < ApplicationController
     render json: student, status: :ok if student.save
   end
 
-  def show 
+  def query
     student = Student.find(params[:id])
     redirect_to student_path(student);
   end
