@@ -16,9 +16,10 @@ class Api::StudentController < ApplicationController
     render json: student, status: :ok if student.save
   end
 
-  def query
+  def show
     student = Student.find(params[:id])
-    redirect_to student_path(student);
+    ActionCable.server.broadcast 'auth_channel',
+    content: student.id
   end
 
 
