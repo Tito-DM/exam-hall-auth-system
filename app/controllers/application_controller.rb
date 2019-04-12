@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :require_user, only:[:verification, :update, :show,:destroy]
+  before_action :require_user, only:[:verification, :update,:destroy]
    protect_from_forgery with: :exception
   #make those function availeble to views
   helper_method :current_student, :logged_in?, :user_name, :current_user,:settint_api
