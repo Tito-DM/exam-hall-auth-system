@@ -20,7 +20,6 @@ class Api::StudentController < ApplicationController
     student = Student.find(params[:id])
     ActionCable.server.broadcast 'auth_channel',
     content: student.id
-    render json: "auth student".to_json, status: :ok
   end
 
 
