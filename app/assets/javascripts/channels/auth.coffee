@@ -7,6 +7,6 @@ App.auth = App.cable.subscriptions.create "AuthChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-     window.location = "http://localhost:3000/students/" + data.content;
+     window.location = "https://shielded-basin-14722.herokuapp.com/students/" + data.content;
 
 
