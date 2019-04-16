@@ -7,4 +7,4 @@ test:
 production:
   adapter: redis
   url: redis://redistogo:d31e3b9b54e098311014e32c4b943725@pearlfish.redistogo.com:9056/
-  
+  channel_prefix: exam-hall-auth_production
