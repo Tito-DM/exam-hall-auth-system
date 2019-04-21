@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
     $student = params[:id]
-    $setting = ""
+    $setting = "enroll"
   end
 
   # GET /students/new

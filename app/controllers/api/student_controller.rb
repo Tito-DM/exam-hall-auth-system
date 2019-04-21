@@ -13,6 +13,7 @@ class Api::StudentController < ApplicationController
   def edit
     student = Student.find(params[:id])
     student.update_columns(fingerstatus: params[:fingerstatus])
+    update_setting
     render json: student, status: :ok if student.save
   end
 

@@ -2,13 +2,16 @@ class ApplicationController < ActionController::Base
   before_action :require_user, only:[:verification, :update,:destroy]
    protect_from_forgery with: :exception
   #make those function availeble to views
-  helper_method :current_student, :logged_in?, :user_name, :current_user,:settint_api
+  helper_method :current_student, :logged_in?, :user_name, :current_user,:settint_api, :update_setting
   #those methods are availeble to all controler
   def settint_api
     @setting =  $setting
   end
   def current_student
     @current_student =$student
+  end
+  def update_setting
+    $setting =""
   end
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
